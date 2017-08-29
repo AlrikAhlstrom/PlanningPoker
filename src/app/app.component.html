@@ -1,23 +1,52 @@
-<div class="container">
-  <h1>
+<app-navbar></app-navbar>
+<div class="container my-5 py-5">
+  <h4 class="text-center">
     {{title}}
-  </h1>
-  <div *ngIf="showHand">
-    <div class="cardHand" *ngFor="let card of deck; let i = index">
-      <div class="card" (click)="selectCard(i)">
-        {{card}}
+  </h4>
+  <div *ngIf="showHand" class="row ">
+    <div class="cardHand p-1" *ngFor="let card of deck; let i = index">
+      <div class="chas-card-sm front-sm  text-center my-auto" (click)="selectCard(i)">
+        <span class="justify-content-center align-self-center">{{card}}</span>
       </div>
     </div>
   </div>
   <div *ngIf="!showHand">
-    <button (click)="reveal()">Reveal</button>
-    <div *ngIf="revealed">
-        {{chosenCard}}
+    <div *ngIf="!revealed" class="chas-card-md backside  text-center my-auto" (click)="reveal()">
     </div>
+    <div *ngIf="revealed">
+        <div class="chas-card-md front-md  text-center my-auto">
+            <span class="justify-content-center align-self-center">{{chosenCard}}</span>
+          </div>
+    </div>
+    <button class="btn-chas" (click)="reveal()">Reveal</button>
   </div>
-  <button (click)="reset()">Reset</button>
+  <button class="btn-chas" (click)="reset()">Reset</button> 
 </div>
+<app-footer></app-footer> 
   
   
 
 
+<!-- <div class="container my-5 py-5">
+    <h4 class="text-center">
+      {{title}}
+    </h4>
+    <div *ngIf="showHand" class="row ">
+      <div class="cardHand p-1" *ngFor="let card of deck; let i = index">
+        <div class="chas-card-sm front-sm col-sm-3 col-xs-4 text-center my-auto" (click)="selectCard(i)">
+          <span class="justify-content-center align-self-center">{{card}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!showHand">
+      <div *ngIf="!revealed" class="card card-block chas-card-md backside col-sm-3 col-xs-4 text-center my-auto" (click)="reveal()">
+      </div>
+      <div *ngIf="revealed">
+          <div class="chas-card-md front-md col-sm-3 col-xs-4 text-center my-auto">
+              <span class="justify-content-center align-self-center">{{chosenCard}}</span>
+            </div>
+      </div>
+      <button class="btn-chas" (click)="reveal()">Reveal</button>
+    </div>
+    <button class="btn-chas" (click)="reset()">Reset</button> 
+  </div> -->

@@ -1,0 +1,45 @@
+.chas-card-sm {
+    width: 92px;
+    height: 128px;
+    font-family: DinCond-Bold;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.chas-card-md {
+    width: 183px;
+    height: 256px;
+    font-size: 90px;
+    font-weight: bolder;
+}
+.backside {
+    background-image: url('../assets/cardBacksideMed.png');
+}
+
+.front-sm {
+    background-image: url('../assets/cardFrontSmall.png');
+}
+
+.front-md {
+    background-image: url('../assets/cardFrontMed.png');
+}
+
+.btn-chas {
+    border:2px solid #de667b;
+    background-color:#de667b;
+    width:200px;
+    -ms-flex-item-align:center;
+    -ms-grid-row-align:center;
+    align-self:center;
+    font-size:1.2rem
+}
+.collab-btn:hover {
+    border:2px solid #e68391;
+    background-color:#e68391;
+    color:#fff
+}
+.collab-btn:active {
+    background-color:transparent;
+    border:2px solid #de667b;
+    color:#de667b
+}
