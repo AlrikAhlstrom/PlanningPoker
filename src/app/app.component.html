@@ -1,23 +1,29 @@
-<div class="container">
-  <h1>
-    {{title}}
-  </h1>
-  <div *ngIf="showHand">
-    <div class="cardHand" *ngFor="let card of deck; let i = index">
-      <div class="card" (click)="selectCard(i)">
-        {{card}}
+<app-navbar></app-navbar>
+<div class="container-fluid mt-3 pt-5 planning-poker" >
+  <div class="row mx-auto px-auto text-center d-block">
+    <!-- only show big cards if a card has been chosen (bool showHand) -->
+      <div *ngIf="!showHand" class="card-table pagination-center my-auto mx-auto pt-4">
+      <!-- <div *ngIf="!showHand" class=" mx-auto d-block px-auto "> -->
+            <!-- show backside when user selects card (bool revealed) -->
+        <div *ngIf="!revealed" class="chas-card-medium backside mx-auto mb-4 px-4 py-5" (click)="reveal(); chosenCard.toggleState() ">
+            <img src="./../../../assets/chasLogo.svg">
+        </div>
+        <!-- show card face when user clicks backside (bool revealed) -->
+        <div *ngIf="revealed">
+            <div class="chas-card-medium front-medium text-center mb-4 py-4" (click)="reveal(); chosenCard.toggleState()">
+                <p class="justify-content-center align-self-center">{{chosenCard.name}} </p>
+              </div>
+        </div>
+        <button *ngIf="!showHand" class="btn-chas py-1 my-2" (click)="reset()">Reset</button> 
+      </div>
+        <!-- run cardDealAnimation when small cards enter or leaves the DOM (cards.length) -->
+      <div  class="card-table mx-auto pt-4" [@cardDealAnimation]=cards.length>
+        <div  id="small-card" class="chasCardSmall my-2 mx-2"
+              *ngFor="let card of cards; let i = index"
+              (click)="selectCard(i);">
+          <p *ngIf="showHand" class="py-3">{{ card.name }}</p>
       </div>
     </div>
   </div>
-  <div *ngIf="!showHand">
-    <button (click)="reveal()">Reveal</button>
-    <div *ngIf="revealed">
-        {{chosenCard}}
-    </div>
-  </div>
-  <button (click)="reset()">Reset</button>
 </div>
-  
-  
-
-
+<app-footer></app-footer>

@@ -1,0 +1,23 @@
+nav, .navbar-brand > img, .navbar-toggler > span, .navbar-nav > .nav-item > .nav-link{
+    background-color: #2b2f2f;
+    color:#FFFFFF;
+}
+
+nav #menu-btn{
+    font-family:DINCond-Bold;
+    font-size: 25.5px;
+}
+
+.navbar-brand.logo-link{
+    line-height: 6px;
+}
+
+#menu-btn {
+    border:1px solid #2b2f2f;
+    outline-color: #2b2f2f
+}
+
+.nav-item{
+    font-family:DINCond-Bold;
+    font-size:1.2rem;
+}

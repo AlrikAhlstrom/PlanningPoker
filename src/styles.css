@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    font-family:DIN-Regular;
+    background-color:#fafafa;
+    min-height: 100vh;
+    margin:0
+}
+
+h1{font-size:41px}
+h1,h2{font-family:DINCond-Bold;color:#2b2f2f;text-transform:uppercase}
+h2{font-size:34px}
+h3{color:#2b2f2f;font-size:28px}
+h3,h4{font-family:DINCond-Bold;text-transform:uppercase}
+h4{font-size:20px}
+p{padding-bottom:10px;font-weight:400}
+a,a:hover{color:#66b0c7}
+@font-face{
+    font-family:DINCond-Bold;
+    src:url(/assets/fonts/DINWeb-CondBold.eot);
+    src:url(/assets/fonts/DINWeb-CondBold.eot?#iefix) 
+    format("embedded-opentype"),url(./assets/fonts/DINWeb-CondBold.woff) 
+    format("woff"),url(./assets/fonts/DINComp-CondBold.ttf) 
+    format("truetype")
+}
+@font-face{
+    font-family:DIN-Regular;src:url(/assets/fonts/DIN-Regular.otf) format("opentype");
+    font-weight:400;font-style:normal}
+
+@font-face{
+    font-family:DIN-Regular;src:url(/assets/fonts/DIN-Bold.otf) format("opentype");
+    font-weight:700;font-style:normal
+}
+
+@font-face{
+    font-family:DIN-Regular;src:url(/assets/fonts/DIN-Light.otf) format("opentype");
+    font-weight:200;font-style:normal
+}
+
+@font-face{
+    font-family:DINOT-Regular;src:url(/assets/fonts/DINOT-Bold.otf) format("opentype");
+    font-weight:400;font-style:normal
+}
+
+@font-face{
+    font-family:DINOT-Regular;src:url(/assets/fonts/DINOT-BoldItalic.otf) format("opentype");
+    font-weight:400;font-style:normal
+}
+
+@font-face{
+    font-family:DINOT-Regular;src:url(/assets/fonts/DINOT-Italic.otf) format("opentype");
+    font-weight:400;font-style:normal
+}
+
+@font-face{
+    font-family:DINOT-Regular;src:url(/assets/fonts/DINOT-Medium.otf) format("opentype");
+    font-weight:400;font-style:normal
+}
+@font-face{
+    font-family:DINOT-Regular;src:url(/assets/fonts/DINOT-MediumItalic.otf) 
+    format("opentype");font-weight:400;font-style:normal
+}
+
+@font-face{
+    font-family:DINOT-Regular;src:url(/assets/fonts/DINOT.otf) format("opentype");
+    font-weight:400;font-style:normal
+}
