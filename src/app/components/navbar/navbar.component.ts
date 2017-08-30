@@ -7,17 +7,9 @@ import {CollapseModule} from 'ngx-bootstrap/collapse';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public isCollapsed: false;
 
   constructor() { }
 
-  public collapsed(event: any): void {
-    console.log(event);
-  }
- 
-  public expanded(event: any): void {
-    console.log(event);
-  }
   ngOnInit() {
   }
 

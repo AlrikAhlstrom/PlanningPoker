@@ -1,4 +1,5 @@
-import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { CardService } from './services/card.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,9 +15,9 @@ import { FooterComponent } from '../app/components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    CollapseModule.forRoot()
+    BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CardService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
