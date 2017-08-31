@@ -1,0 +1,116 @@
+.container-fluid {
+    font-family:DINCond-Bold;
+    width: 100%;
+    min-width: 100%;
+}
+.card-table {
+
+    text-align: center;
+    max-width: 300px;
+}
+
+.chasCardSmall {
+    display: inline-block;
+    width: 70px;
+    height: 97px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.chasCardSmall p {
+    margin-top: -8px;
+    font-size: 45px;
+}
+
+.small-text {
+text-align: left;
+}
+.chasCard p {
+text-align: center;
+font-size: 90px;
+}
+
+div[class*='suit']:after {
+position: absolute;
+font-size: 85px;
+right: 5px;
+bottom: 5px;
+} 
+
+.chasCardSmall:hover, .chas-card-medium:hover {
+cursor: pointer;
+}
+
+.planning-poker {
+    background: rgba(52, 152, 101, 0.56);
+    min-height: 568px;
+}
+
+.chas-card-small {
+    width: 92px;
+    height: 128px;
+    font-family: DinCond-Bold;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.chas-card-medium {
+    width: 273px;
+    height: 378px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 90px;
+    display: inline-block;
+}
+
+.chas-card-large {
+    width: 183px;
+    height: 256px;
+    font-size: 90px;
+    font-weight: bolder;
+    
+}
+.backside {
+    background-color: #2b2f2f;
+    border: 10px solid #F9F9F9;
+    border-radius: 20px;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+}
+backside:hover {
+    cursor: pointer; 
+}
+.front-small{
+    background-image: url('../assets/cardFrontSmall.png');
+}
+
+.front-medium {
+    font-size: 140px;
+    font-weight: bolder;
+    background-color: #E2E2E2;
+    border: 10px solid #F9F9F9;
+    border-radius: 20px;
+    box-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+}
+
+.btn-chas {
+    border:2px solid #de667b;
+    background-color:#de667b;
+    color:#fff;
+    width: 90%;
+    -ms-flex-item-align:center;
+    -ms-grid-row-align:center;
+    align-self:center;
+    font-size:1.2rem
+}
+.btn-chas:hover {
+    border:2px solid #e68391;
+    background-color:#e68391;
+    color:#fff;
+    cursor: pointer;
+}
+.btn-chas:active {
+    background-color:transparent;
+    border:2px solid #de667b;
+    color:#de667b
+}
