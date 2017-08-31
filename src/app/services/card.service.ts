@@ -7,10 +7,10 @@ animation that flips chosen Card. */
 class Card {
   constructor(
     public name: string,
-    public state = 'faceup') {
+    public showFace: Boolean = true) {
     }
-    toggleState() {
-      this.state = (this.state === 'backside' ? 'faceup' : 'backside');
+    toggleShowFace() {
+      this.showFace ? this.showFace = false : this.showFace = true;
     }
 }
 

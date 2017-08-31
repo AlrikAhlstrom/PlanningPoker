@@ -3,25 +3,25 @@
   <div class="row mx-auto px-auto text-center d-block">
     <!-- only show big cards if a card has been chosen (bool showHand) -->
       <div *ngIf="!showHand" class="card-table pagination-center my-auto mx-auto pt-4">
-      <!-- <div *ngIf="!showHand" class=" mx-auto d-block px-auto "> -->
-            <!-- show backside when user selects card (bool revealed) -->
-        <div *ngIf="!revealed" class="chas-card-medium backside mx-auto mb-4 px-4 py-5" (click)="reveal(); chosenCard.toggleState() ">
-            <img src="./../../../assets/chasLogo.svg">
+        <!-- chosen card faceup/backside-class is assigned depentent on bool showface, which is
+              toggled by clicking the card -->
+        <div class="mx-auto mb-4 px-5 py-4 pagination-center" 
+              [ngClass]="{'faceup' : chosenCard.showFace, 'backside' : !chosenCard.showFace }"
+              (click)="chosenCard.toggleShowFace()">
+          <p class="justify-content-center align-self-center">{{chosenCard.name}}</p>
         </div>
-        <!-- show card face when user clicks backside (bool revealed) -->
-        <div *ngIf="revealed">
-            <div class="chas-card-medium front-medium text-center mb-4 py-4" (click)="reveal(); chosenCard.toggleState()">
-                <p class="justify-content-center align-self-center">{{chosenCard.name}} </p>
-              </div>
-        </div>
-        <button *ngIf="!showHand" class="btn-chas py-1 my-2" (click)="reset()">Reset</button> 
+        <button *ngIf="!showHand" class="btn-chas py-1 my-2" (click)="reset()">Reset</button>
       </div>
-        <!-- run cardDealAnimation when small cards enter or leaves the DOM (cards.length) -->
+        <!-- run cardDealAnimation when small cards enter or leaves the DOM (cards.length) 
+          same use of ngClass as above for setting faceup/backside-class -->
       <div  class="card-table mx-auto pt-4" [@cardDealAnimation]=cards.length>
-        <div  id="small-card" class="chasCardSmall my-2 mx-2"
+        <div  id="small-card" class=" my-2 mx-2 backside-small"
               *ngFor="let card of cards; let i = index"
-              (click)="selectCard(i);">
-          <p *ngIf="showHand" class="py-3">{{ card.name }}</p>
+              (click)="card.toggleShowFace(); selectCard(i); "
+              [ngClass]="{'faceup-small' : card.showFace , 'backside-small' : !card.showFace}">
+          <p *ngIf="card.showFace" class="py-3">{{ card.name }}</p>
+          <!-- fix to align backside cards horizontally with faceup cards -->
+          <p *ngIf="!card.showFace" class="py-3">.</p>
       </div>
     </div>
   </div>
