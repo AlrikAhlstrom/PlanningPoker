@@ -34,6 +34,17 @@ import {trigger, state, style, transition, animate, query, stagger, keyframes, g
         ]), {optional: true})
       ])
     ]),
+    trigger('flyInAnimation', [
+      state('false', style({transform: 'translateX(0)'})),
+      transition('void => *', [
+        animate(300, keyframes([
+          style({opacity: 0, transform: 'translateX(-50%) translateY(60%)', offset: 0}),
+          style({opacity: 0.4, transform: 'translateX(-55px) translateY(0)',  offset: 0.3}),
+          style({opacity: 1, transform: 'translateX(-6px) translateY(-9px)',  offset: 0.4}),
+          style({opacity: 1, transform: 'translateX(0) translateY(0)',     offset: 1.0})
+        ])),
+      ]),
+    ])
   ]
 })
 
@@ -57,7 +68,6 @@ export class AppComponent implements OnInit {
     this.showHand = true;
     // the card should be face down after it is chosen
   }
-
   selectCard(index) {
      /* save the card before the card array is deleted.
      the card array has to be deleted for animation
