@@ -1,13 +1,13 @@
 import { CardService } from './services/card.service';
 import { Component, OnInit } from '@angular/core';
-import {trigger, state, style, transition, animate, query, stagger, keyframes} from '@angular/animations';
+import {trigger, state, style, transition, animate, query, stagger, keyframes, group} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
-     trigger('cardDealAnimation', [
+      trigger('cardDealAnimation', [
        //  animate any state change ( * => *)
       transition('* => *', [
         // target elements within the trigger element (card-table) that enter the DOM (all the small cards)
@@ -56,7 +56,6 @@ export class AppComponent implements OnInit {
     // show all the small cards at start
     this.showHand = true;
     // the card should be face down after it is chosen
-    this.revealed = false;
   }
 
   selectCard(index) {
@@ -64,23 +63,24 @@ export class AppComponent implements OnInit {
      the card array has to be deleted for animation
      to run and make them dissapear */
     const tempCard = this.cards[index];
-    this.cards = [];
+
+    // wait for chosen card to be flipped before emptying array;
+    setTimeout(() => {
+      this.cards = [];
+    }, 100);
+
     // wait for cards to dissapear (cardDealFunction :leave)
     setTimeout(() => {
       this.chosenCard = tempCard;
       this.showHand = false;
-      }, 750);
+      }, 850);
 
-  }
-
-  reveal() {
-    // flip the card on click
-    this.revealed = this.revealed ? this.revealed = false : this.revealed = true;
   }
 
   reset() {
     // set all default values
     this.showHand = true;
+    this.chosenCard.showFace = true;
     this.cards = this.cardService.deck;
     this.revealed = false;
   }
@@ -96,6 +96,6 @@ export class AppComponent implements OnInit {
 
 interface Card {
   name: string;
-  state: string;
-  toggleState: MethodDecorator;
+  showFace: Boolean;
+  toggleShowFace: MethodDecorator;
 }
