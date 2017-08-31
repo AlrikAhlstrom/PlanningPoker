@@ -14,7 +14,7 @@
                 <p class="justify-content-center align-self-center">{{chosenCard.name}} </p>
               </div>
         </div>
-        <button *ngIf="!showHand" class="btn-chas py-1 my-2" (click)="reset()">Reset</button> 
+        <button *ngIf="!showHand" class="btn-chas py-1 my-2" (click)="reset()">Pick new card</button> 
       </div>
         <!-- run cardDealAnimation when small cards enter or leaves the DOM (cards.length) -->
       <div  class="card-table mx-auto pt-4" [@cardDealAnimation]=cards.length>
